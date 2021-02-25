@@ -1,0 +1,59 @@
+@charset "utf-8";
+*{margin: 0px;padding: 0px;box-sizing: border-box;outline: none;list-style: none;text-decoration: none;}
+/* start body */
+body{background-color: rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif;}
+    /* start cup_fill */
+body .cup_fill{width:200px;height:270px;position: fixed;top: 50%;left: 50%;transform:translate(-50%,-50%);border:3px solid rgb(0, 0, 0);
+                background-image:linear-gradient(to top,rgb(24, 38, 43),rgb(0, 167, 233));overflow: hidden;}
+body .cup_fill .squar{width: 378px;height: 378px;border: 2px solid rgb(255, 255, 255);position: absolute;bottom: -55px;margin-left: -89px;border-radius: 125px;
+                    background-color: rgb(255, 255, 255);animation: moving 5s 0s 1 ease-out both;z-index: 2;}
+                        /* start animation cup_fill */
+@keyframes moving{
+    0%{
+         bottom: -55px;
+         transform:rotate(-15deg);
+     }
+     /* 50%{
+         bottom: 280px;
+         transform:rotate(-360deg);
+     } */
+     100%{
+         bottom: 280px;
+         transform:rotate(-360deg);
+     }
+ }
+    /* start logo */
+.logo {overflow: visible;width: auto;height: 46px;position: absolute;top: 75%;left: 50%;transform: translate(-50%);}
+.logo text{letter-spacing: 2px;transform: translate(-121px,15px);font-size: 50px;font-weight: bolder;stroke: rgb(0, 0, 0);
+            stroke-width: 2.5px;stroke-dasharray:280px;stroke-dashoffset: -280px;fill: transparent;transition:fill 5s; animation: stroke_logo 3.6s 0s 1 both;}
+        /* start animation text */
+@keyframes stroke_logo{
+    0%{
+        
+        stroke-dashoffset: 280px;
+    }
+    99%{
+        fill: rgba(0, 0, 0, 0);
+        stroke-dashoffset: 0px;
+
+    }
+    100%{
+        fill: rgba(0, 0, 0, 1);        transition:fill 1s;
+    }
+}
+        /* start  img*/
+        body .cup_fill img{position: absolute; top: 50%;left: 50%;border-radius: 39%;margin-left:-73px;margin-top:-73px; border:3px solid rgb(255, 255, 255);z-index: 1;transition: transform 1s; animation: img_visible 1s 5s 1 both;}
+@keyframes img_visible{
+    0%{
+        z-index: 1;
+        transform:rotate(0deg);
+    }
+    90%{
+        z-index: 3;
+    }
+    100%{
+        
+        transform:rotate(calc(360deg * 5));
+        z-index: 3;
+    }
+}
